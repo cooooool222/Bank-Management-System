@@ -1,0 +1,15 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "Loginmanagements/lib/jcalendar-1.4.jar",
+        "Loginmanagements/lib/LGoodDatePicker-11.2.1.jar",
+        "Loginmanagements/lib/mysql-connector-j-9.3.0.jar"
+
+    ],
+      "java.project.sourcePaths": [
+        "lib\\jar",
+        "."
+    ],
+
+    "java.project.outputPath": "bin"
+    }
