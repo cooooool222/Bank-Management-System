@@ -143,27 +143,54 @@ public class Frame {
     JTextField CityText = new JTextField();
     JTextField ZipCodeText  = new JTextField(); 
     JTextField StateText = new JTextField();
-
-
+ 
+     //Button
     JButton next = new JButton("next");
+    JRadioButton malebutton = new JRadioButton("Male");
+    JRadioButton femalebutton = new JRadioButton("Female");
+    ButtonGroup genderbender = new ButtonGroup();
+    
+    
 
     JDateChooser datechooser = new JDateChooser();
 
 
 
     SignupFrameOne() {
+           //panel 
+
          
       
         firstNameText.setPreferredSize(new Dimension(400,27));
         lastNameText.setPreferredSize(new Dimension(400,27));
         datechooser.setPreferredSize(new Dimension(400,27));
+        emailAddressText.setPreferredSize(new Dimension(400,27));
+        AddressText.setPreferredSize(new Dimension(400,27));
+        CityText.setPreferredSize(new Dimension(400,27));
+        ZipCodeText.setPreferredSize(new Dimension(400,27));
+        StateText.setPreferredSize(new Dimension(400,27));
 
+                                  
+            
+        //button
+        femalebutton.setOpaque(false);
+        femalebutton.setFont(new Font("Arial", Font.BOLD, 15));
+        malebutton.setFont(new Font("Arial", Font.BOLD, 15));
+        malebutton.setOpaque(false);
+        genderbender.add(malebutton);
+        genderbender.add(femalebutton);
         
-        //panel 
 
+    
+         //label 
          firstNamelabel.setFont(new Font("Arial", Font.BOLD, 20));
          lastNamelabel.setFont(new Font("Arial", Font.BOLD, 20));
          dobLabel.setFont(new Font("Arial", Font.BOLD, 20));
+         genderLabel.setFont(new Font("Arial", Font.BOLD, 20));
+         emailAddressLabel.setFont(new Font("Arial", Font.BOLD, 20));
+         AddressLabel.setFont(new Font("Arial", Font.BOLD, 20));
+          StateLabel.setFont(new Font("Arial", Font.BOLD, 20));
+          CityLabel.setFont(new Font("Arial", Font.BOLD, 20));
 
 
         SignUpPanel.setBackground(Color.WHITE);
@@ -171,37 +198,112 @@ public class Frame {
         int middley = (800 - 600)/2;
         SignUpPanel.setBounds(middlex, middley, 700, 600);
         SignUpPanel.setLayout(new GridBagLayout());
+        
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.NORTHWEST;
         gbc.weightx = 0;
         gbc.weighty = 0;
         gbc.insets = new Insets(50,50,10,10);
+        gbc.fill = GridBagConstraints.NONE;
         SignUpPanel.add(firstNamelabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 0; 
         gbc.weighty = 0;
-        gbc.weightx = 0;
+        gbc.weightx = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridwidth = 2;
         SignUpPanel.add(firstNameText,gbc);
+        gbc.gridwidth = 1;
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.weighty = 0;
-        gbc.weightx = 1;
+        gbc.weightx = 0;
         gbc.insets = new Insets(20, 50, 10, 10);
+        gbc.fill = GridBagConstraints.NONE;
         SignUpPanel.add(lastNamelabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.weighty = 0;
-        gbc.weightx = 0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1.0;  
+        gbc.gridwidth = 2;
         SignUpPanel.add(lastNameText, gbc);
         gbc.gridx = 1;
         gbc.gridy = 2;
-        gbc.weighty = 1;
-        gbc.weightx = 0;
+        gbc.weighty = 0;
+        gbc.weightx = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridwidth = 2;
         SignUpPanel.add(datechooser, gbc);
         gbc.gridx = 0;
         gbc.gridy = 2;
+        gbc.weightx = 0;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridwidth = 1;
         SignUpPanel.add(dobLabel, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.weightx = 0;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridwidth = 1;
+        SignUpPanel.add(genderLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.weightx = 0;
+         gbc.fill = GridBagConstraints.NONE;
+        SignUpPanel.add(femalebutton, gbc);
+        gbc.gridx = 2;
+        gbc.gridy = 3;
+        gbc.weightx = 0.0;
+        gbc.fill = GridBagConstraints.NONE;
+        SignUpPanel.add(malebutton,gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridwidth = 1;
+        SignUpPanel.add(emailAddressLabel,gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 4;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        SignUpPanel.add(emailAddressText,gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+          gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.NONE;
+        SignUpPanel.add(AddressLabel,gbc);
+        gbc.gridx = 1;
+        gbc.gridy= 5;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weighty= 0;
+        gbc.gridwidth = 2;
+        SignUpPanel.add(AddressText, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 6;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridwidth = 1;
+        SignUpPanel.add(StateLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy= 6;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weighty= 0;
+        gbc.gridwidth = 2;
+        SignUpPanel.add(StateText,gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 7;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridwidth = 1;
+        gbc.weighty = 0.1;
+        SignUpPanel.add(CityLabel, gbc);
+         gbc.gridx = 1;
+        gbc.gridy= 7;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weighty= 0;
+        gbc.gridwidth = 2;
+        SignUpPanel.add(CityText, gbc);
 
        
 
@@ -218,7 +320,7 @@ public class Frame {
         frame.setSize(850, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
-         next.addActionListener(this);
+        next.addActionListener(this);
         frame.add(SignUpPanel);
         frame.setResizable(false);
         
